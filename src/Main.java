@@ -8,8 +8,8 @@ public class Main {
         System.out.println("Депозит 10000");
         for (int i = 0;  ; i++) {
             try {
-                System.out.println("Снять 6000");
                 bank.withDraw(6000.00);
+                System.out.println("Снять 6000");
             } catch (LimitException b) {
                 System.out.println("Снять оставшую сумму " + b.getRemainingAmount());
                 break;
