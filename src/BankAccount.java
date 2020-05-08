@@ -12,7 +12,7 @@ public class BankAccount {
 
     public double  withDraw(double sum) throws LimitException {
         if (sum > amount)
-            throw new LimitException("Снять оставшую сумму", amount);
+            throw new LimitException("Снять оставшую сумму ", amount);
         amount = amount - sum;
         return amount;
 
