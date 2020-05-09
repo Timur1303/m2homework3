@@ -1,15 +1,15 @@
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LimitException {
 
         BankAccount bank = new BankAccount(0);
-        bank.deposit(10000);
+        bank.deposit(20000);
         for (int i = 0;  ; i++) {
             try {
                 bank.withDraw(6000.00);
             } catch (LimitException b) {
-                System.out.println("Снять оставшую сумму " + b.getRemainingAmount());
+                bank.withDraw(b.getRemainingAmount());
                 System.out.println(b.getMessage());
                 break;
             }
